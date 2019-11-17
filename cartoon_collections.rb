@@ -1,32 +1,28 @@
-def roll_call_dwarves(dwarves)
-  dwarves.each_with_index do |dwarf, index|
-    puts "#{index + 1}. + #{dwarf}"
+def roll_call_dwarves(dwarves)# code an argument here
+  dwarves.each_with_index do |dwarf, i| p ((i+1).to_s + ". "  + dwarf) 
   end
 end
 
-planeteer_calls = %w[earth wind fire water heart]
 
-def summon_captain_planet(planeteer_calls) 
-  planeteer_calls.map { |planet| planet.capitalize + '!'}
-end
-summon_captain_planet(planeteer_calls) 
+def summon_captain_planet(planeteer_calls)
 
-def long_planeteer_calls(planeteer_calls)
-  planeteer_calls.any? { |words| words.length > 4 }
+  planeteer_calls.map {|call| call.capitalize + "!"}  
+  # new_array.map {|word| word + "!"}
 end
 
-long_planeteer_calls(planeteer_calls)
+def long_planeteer_calls(planeteer_calls) 
+  planeteer_calls.any? {|call|call.length > 4}
+end
 
-stuff = %w[beer latex gouda children]
 
-def find_the_cheese(stuff)
+items_we_are_checking = %w[umbrella spinach cheddar helicopter]
+
+def find_the_cheese(items_we_are_checking)
+  # the array below is here to help
   cheese_types = ["cheddar", "gouda", "camembert"]
-  stuff.find do |have_cheese|
-    cheese_types.include?(have_cheese)
 
-  
+  items_we_are_checking.find do |cheese| 
+    cheese_types.include?(cheese)
   end
 end
-find_the_cheese(stuff)
-
-
+find_the_cheese(items_we_are_checking)
